@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <style>
+        .form-control {
+            margin: 20px 0px;
+        }
+    </style>
+
+    <div class="container mt-5">
+        <h2>Register Form </h2>
+        <form id="RegisterForm" method="post" action="{% url 'register' %}" class="needs-validation bg-white shadow rounded p-5" novalidate>
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
+            </div>
+            <div class="form-group">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                {{ form.password.label_tag }}
+                {{ form.password }}
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("submitBtn").addEventListener("click", function (event) {
+                var form = document.getElementById("RegisterForm");
+                if (!form.checkValidity()) {
+                    event.preventDefault(); // Prevent form submission if not valid
+                    event.stopPropagation();
+                }
+                form.classList.add("was-validated");
+            });
+        });
+    </script>
+{% endblock %}
