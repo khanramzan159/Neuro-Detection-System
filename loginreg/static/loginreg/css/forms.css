@@ -178,7 +178,7 @@ form .aligned table p {
 }
 
 fieldset .fieldBox {
-    float: left;
+    float: right;
     margin-right: 20px;
 }
 
@@ -227,6 +227,7 @@ fieldset.collapsed {
 fieldset.collapsed h2 {
     background: var(--darkened-bg);
     color: var(--body-quiet-color);
+    /* text-align: center; */
 }
 
 fieldset .collapse-toggle {
@@ -525,4 +526,9 @@ form .related-widget-wrapper ul {
 
 .clearable-file-input input {
     margin-top: 0;
+}
+
+#RegisterForm{
+    height:60px;
+    width: auto;
 }

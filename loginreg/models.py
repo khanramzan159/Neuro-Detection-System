@@ -9,5 +9,10 @@ class User(models.Model):
     phone = models.CharField(max_length=10)
     status = models.IntegerField(default=1)
     
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name
+    
+    
+class Admin(models.Model):
+    username = models.CharField(max_length=100)
+    password = models.CharField(max_length=100) 
